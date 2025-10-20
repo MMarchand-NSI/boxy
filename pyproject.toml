@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling>=1.25", "hatch-vcs>=0.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "boxy"
+dynamic = ["version"]
+description = "Boxy is a simple game engine for 2D Grid Games"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Ton Nom", email = "toi@example.com" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "arcade>=3.3.0",
+    "pillow>=11"
+]
+
+
+#[project.urls]
+#Homepage = "https://github.com/toncompte/grox"
+#Repository = "https://github.com/toncompte/grox"
+#Issues = "https://github.com/toncompte/grox/issues"
+#Changelog = "https://github.com/toncompte/grox/blob/main/CHANGELOG.md"
+
+
+[dependency-groups]
+dev = ["pytest>=8.3", "ruff>=0.6", "mypy>=1.11"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/boxy"]
+include = [
+  "LICENSE",
+  "NOTICE",
+  "THIRD_PARTY_LICENSES/**",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/boxy",
+  "README.md",
+  "LICENSE",
+  "NOTICE",
+  "THIRD_PARTY_LICENSES/**",
+  "CHANGELOG.md",
+]
