@@ -1,16 +1,19 @@
-# Boxy
+# Metagrid
 
-[![PyPI version](https://badge.fury.io/py/py-boxy.svg)](https://badge.fury.io/py/py-boxy)
-[![Build Status](https://travis-ci.org/your-username/boxy.svg?branch=master)](https://travis-ci.org/your-username/boxy)
-[![Coverage Status](https://coveralls.io/repos/your-username/boxy/badge.svg?branch=master)](https://coveralls.io/github/your-username/boxy?branch=master)
 
 ## Description
 
-Boxy is a Python library for creating graphical user interfaces (GUIs) using various backends. It provides a simple and consistent API for creating windows, buttons, labels, and other GUI elements.
+Metagrid is a Python library for creating simple 2D grid games.
+
+A grid cell can be:
+
+- Plain colored
+- An image
+- A character
 
 ## Installation
 
-You can install Boxy using pip:
+You can install Metagrid using pip:
 
 ```shell
-pip install boxy
+pip install metagrid
