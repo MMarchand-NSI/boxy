@@ -50,15 +50,10 @@ source = "vcs"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/metagrid"]
-include = [
-  "LICENSE",
-  "NOTICE",
-  "THIRD_PARTY_LICENSES/**",
-]
 
 [tool.hatch.build.targets.sdist]
 include = [
-  "src/boxy",
+  "src/metagrid",  # ← Changé de "src/boxy" à "src/metagrid"
   "README.md",
   "LICENSE",
   "NOTICE",
