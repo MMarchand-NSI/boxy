@@ -3,13 +3,13 @@ requires = ["hatchling>=1.25", "hatch-vcs>=0.4"]
 build-backend = "hatchling.build"
 
 [project]
-name = "boxy"
+name = "easygrid"
 dynamic = ["version"]
-description = "Boxy is a simple game engine for 2D Grid Games"
+description = "Easygrid is a simple game engine for 2D Grid Games"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
-authors = [{ name = "Ton Nom", email = "toi@example.com" }]
+authors = [{ name = "Matthieu Marchand", email = "matthieu.marchand@gmail.com" }]
 classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
@@ -44,7 +44,7 @@ default-groups = ["dev"]
 source = "vcs"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/boxy"]
+packages = ["src/easygrid"]
 include = [
   "LICENSE",
   "NOTICE",

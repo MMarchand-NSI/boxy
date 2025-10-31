@@ -1,4 +1,4 @@
-import gridcrafter
+import easygrid
 from random import choice
 
 
@@ -106,12 +106,15 @@ def touche(s: str):
         grille[icurseur][jcurseur] = s.upper()
         jcurseur += 1
 
+def update():
+    pass
+
 
 if __name__ == "__main__":
     init()
-    jeu = gridcrafter.create(NB_LIGNES, NB_COLONNES, CELL_SIZE, 4, init)
+    jeu = easygrid.create(NB_LIGNES, NB_COLONNES, CELL_SIZE, 4, init)
 
     images = ["curseur", "faux", "malplace", "trouve", "vide"]
     for nom in images:
         jeu.load_image(nom, f"assets/wordle/{nom}.png")
-    jeu.start(None, touche, dessiner, None)
+    jeu.start(None, touche, dessiner, update)

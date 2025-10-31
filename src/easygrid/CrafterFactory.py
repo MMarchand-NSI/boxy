@@ -1,5 +1,5 @@
-from typing import Literal, Callable
-
+# pyright: reportImportCycles=false
+from typing import Callable, Literal
 from . import backends
 
 BackendName = Literal["arcade"]
@@ -15,7 +15,7 @@ class CrafterFactory:
         Retourne une instance du crafter choisi (ArcadeCrafter est le seul backend supporté pour l'instant).
         """
         if backend == "arcade":
-            from .backends.arcade import ArcadeCrafter
+            from .backends.arcade_impl import ArcadeCrafter
             return ArcadeCrafter(nrows, ncols, cell_size, margin, init)
         else:
-            raise ValueError(f"Backend inconnu : {backend!r}")
+            raise ValueError(f"Backend inconnu : {backend!r}")  # pyright: ignore[reportUnreachable]

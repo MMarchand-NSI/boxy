@@ -1,6 +1,6 @@
-import boxy
+import easygrid
 from random import randint
-import file
+import file  # pyright: ignore[reportImplicitRelativeImport]
 from typing import TypeAlias
 
 import logging
@@ -16,6 +16,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 HEIGHT = 30
 WIDTH = 30
+VITESSE = 10
 
 #! ETAT DU JEU
 Coord: TypeAlias = tuple[int, int]
@@ -69,9 +70,13 @@ def touche(car: str):
 
 def update():
     global snake, pomme, dx, dy, tete, supprime, game_over
+
     if game_over:
         return
 
+    if jeu.frame_no % VITESSE != 0:
+        return
+    
     tete = ( (tete[0]+dx) % WIDTH,  (tete[1]+dy) % HEIGHT )
 
     if tete in snake and (dx, dy) != (0,0):
@@ -113,8 +118,7 @@ def spawn_pomme():
 
 if __name__ == "__main__":
     init()
-    jeu = boxy.create(HEIGHT, WIDTH, 20, 1, init)
+    jeu = easygrid.create(HEIGHT, WIDTH, 20, 1, init)
     jeu.play_sound(r"assets/snake/snake.mp3")
-    jeu.set_fps(5)
 
     jeu.start(fn_click=lambda x, y:None, fn_key=touche, fn_update=update, fn_draw=draw)

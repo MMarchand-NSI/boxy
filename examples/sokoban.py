@@ -1,5 +1,5 @@
-import boxy
-from sokoban_maps import maps, tiles
+import easygrid
+from sokoban_maps import maps, tiles  # pyright: ignore[reportImplicitRelativeImport]
 import sys
 
 
@@ -93,6 +93,8 @@ def dessiner():
         for j in range(get_nb_colonnes()):
             jeu.set_cell_image(i, j, tiles[grille[i][j]])
 
+def update():
+    pass
 
 if __name__ == "__main__":
     # Gestion du paramètre du programme
@@ -102,11 +104,11 @@ if __name__ == "__main__":
 
     #Initialisation
     init()
-    jeu = boxy.create(get_nb_lignes(), get_nb_colonnes(), 32, 0, init)
+    jeu = easygrid.create(get_nb_lignes(), get_nb_colonnes(), 32, 0, init)
 
     jeu.play_sound(r"assets/sounds/sokoban_intro.mp3")
 
     # Chargement des tiles
     for nom in tiles.values():
         jeu.load_image(nom, f"assets/sokoban/{nom}.png")
-    jeu.start(None, touche, dessiner, None)
+    jeu.start(None, touche, dessiner, update)

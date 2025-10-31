@@ -1,4 +1,4 @@
-from typing import Callable, Optional
+from typing import Callable
 from abc import ABCMeta, abstractmethod
 
 class AbstractCrafter(metaclass = ABCMeta):
@@ -10,34 +10,28 @@ class AbstractCrafter(metaclass = ABCMeta):
         """
         Initialisation du jeu.
         """
-        self.margin = margin        # grid line with (px)
-        self.nrows = nb_lignes      # Number of rows
-        self.ncols = nb_colonnes    # Number of columns
-        self.cell_size = cell_size  # Cell size
-        self.fps = 60               # FPS, defaults to 60
-        self.frame_no = 0           # Holds the number of frame since start
-        self.init = init
+        self.margin: int = margin        # grid line with (px)
+        self.nrows: int = nb_lignes      # Number of rows
+        self.ncols: int = nb_colonnes    # Number of columns
+        self.cell_size: int = cell_size  # Cell size
+        self.fps: int = 60               # FPS, defaults to 60
+        self.frame_no: int = 0           # Holds the number of frame since start
+        self.init: Callable[[], None] = init
 
-    @abstractmethod
-    def set_fps(self, fps: int):
-        """
-        Method allowing to change the fps rate during play
-        """
-        self.fps = fps
 
 
     @abstractmethod
-    def start(self, fn_click: Optional[Callable[[int, int], None]],
-                    fn_key: Optional[Callable[[str], None]],
-                    fn_draw: Optional[Callable[[], None]],
-                    fn_update: Optional[Callable[[], None]]):
+    def start(self, fn_click: Callable[[int, int], None] | None,
+                    fn_key: Callable[[str], None] | None,
+                    fn_draw: Callable[[], None],
+                    fn_update: Callable[[], None]):
         """
         Start the engine, declaring callbacks
         """
-        self.fn_click = fn_click
-        self.fn_key = fn_key
-        self.fn_draw = fn_draw
-        self.fn_update = fn_update
+        self.fn_click: Callable[[int, int], None] | None = fn_click
+        self.fn_key: Callable[[str], None] | None= fn_key
+        self.fn_draw: Callable[[], None] | None = fn_draw
+        self.fn_update: Callable[[], None] | None = fn_update
         ...
 
 
