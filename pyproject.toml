@@ -35,7 +35,12 @@ dependencies = [
 
 
 [dependency-groups]
-dev = ["pytest>=8.3", "ruff>=0.6", "mypy>=1.11"]
+dev = [
+    "pytest>=8.3",
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "twine>=6.2.0",
+]
 
 [tool.uv]
 default-groups = ["dev"]
