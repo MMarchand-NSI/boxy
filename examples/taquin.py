@@ -1,4 +1,4 @@
-import easygrid
+import metagrid
 from random import choice, randint
 
 
@@ -84,7 +84,7 @@ if __name__=="__main__":
     init()
 
     # Initialisation du moteur
-    jeu = easygrid.create(NB_LIGNES, NB_COLONNES, TAILLE_CASE, 0, init)
+    jeu = metagrid.create(NB_LIGNES, NB_COLONNES, TAILLE_CASE, 0, init)
 
     # Chargement de toutes les images dans le moteur
     for i in range(16):

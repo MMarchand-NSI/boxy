@@ -1,4 +1,4 @@
-import easygrid
+import metagrid
 from random import choice
 
 
@@ -112,7 +112,7 @@ def update():
 
 if __name__ == "__main__":
     init()
-    jeu = easygrid.create(NB_LIGNES, NB_COLONNES, CELL_SIZE, 4, init)
+    jeu = metagrid.create(NB_LIGNES, NB_COLONNES, CELL_SIZE, 4, init)
 
     images = ["curseur", "faux", "malplace", "trouve", "vide"]
     for nom in images:

@@ -1,4 +1,4 @@
-import easygrid
+import metagrid
 from random import randint
 import file  # pyright: ignore[reportImplicitRelativeImport]
 from typing import TypeAlias
@@ -118,7 +118,7 @@ def spawn_pomme():
 
 if __name__ == "__main__":
     init()
-    jeu = easygrid.create(HEIGHT, WIDTH, 20, 1, init)
+    jeu = metagrid.create(HEIGHT, WIDTH, 20, 1, init)
     jeu.play_sound(r"assets/snake/snake.mp3")
 
     jeu.start(fn_click=lambda x, y:None, fn_key=touche, fn_update=update, fn_draw=draw)

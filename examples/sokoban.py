@@ -1,4 +1,4 @@
-import easygrid
+import metagrid
 from sokoban_maps import maps, tiles  # pyright: ignore[reportImplicitRelativeImport]
 import sys
 
@@ -104,7 +104,7 @@ if __name__ == "__main__":
 
     #Initialisation
     init()
-    jeu = easygrid.create(get_nb_lignes(), get_nb_colonnes(), 32, 0, init)
+    jeu = metagrid.create(get_nb_lignes(), get_nb_colonnes(), 32, 0, init)
 
     jeu.play_sound(r"assets/sounds/sokoban_intro.mp3")
 

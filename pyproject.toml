@@ -3,9 +3,9 @@ requires = ["hatchling>=1.25", "hatch-vcs>=0.4"]
 build-backend = "hatchling.build"
 
 [project]
-name = "easygrid"
+name = "metagrid"
 dynamic = ["version"]
-description = "Easygrid is a simple game engine for 2D Grid Games"
+description = "Metagrid is a simple game engine for 2D Grid Games"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -49,7 +49,7 @@ default-groups = ["dev"]
 source = "vcs"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/easygrid"]
+packages = ["src/metagrid"]
 include = [
   "LICENSE",
   "NOTICE",
