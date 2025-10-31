@@ -84,11 +84,11 @@ if __name__=="__main__":
     init()
 
     # Initialisation du moteur
-    jeu = metagrid.create(NB_LIGNES, NB_COLONNES, TAILLE_CASE, 0, init)
+    jeu = metagrid.create(NB_LIGNES, NB_COLONNES, TAILLE_CASE, 0)
 
     # Chargement de toutes les images dans le moteur
     for i in range(16):
         jeu.load_image(f"tile{i}", f"assets/taquin/tile_{i}.png")
 
     # Lancement du moteur avec ses callbacks
-    jeu.start(fn_draw=affiche_grille, fn_click=bouge, fn_key=None, fn_update=update)
+    jeu.start(init, fn_draw=affiche_grille, fn_click=bouge, fn_key=None, fn_update=update)

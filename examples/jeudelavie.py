@@ -75,6 +75,5 @@ def prochaine_grille(g: list[list[int]]) -> list[list[int]]:
 
 
 if __name__ == "__main__":
-    init()
-    jeu = metagrid.create(HEIGHT, WIDTH, 20, 0, init)
-    jeu.start(fn_click=cliquer, fn_key=touche, fn_draw=draw, fn_update=update)
+    jeu = metagrid.create(HEIGHT, WIDTH, 20, 0)
+    jeu.start(init, fn_click=cliquer, fn_key=touche, fn_draw=draw, fn_update=update)

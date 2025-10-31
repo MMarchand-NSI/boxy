@@ -112,9 +112,9 @@ def update():
 
 if __name__ == "__main__":
     init()
-    jeu = metagrid.create(NB_LIGNES, NB_COLONNES, CELL_SIZE, 4, init)
+    jeu = metagrid.create(NB_LIGNES, NB_COLONNES, CELL_SIZE, 4)
 
     images = ["curseur", "faux", "malplace", "trouve", "vide"]
     for nom in images:
         jeu.load_image(nom, f"assets/wordle/{nom}.png")
-    jeu.start(None, touche, dessiner, update)
+    jeu.start(init, None, touche, dessiner, update)

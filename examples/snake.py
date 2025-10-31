@@ -117,8 +117,7 @@ def spawn_pomme():
 
 
 if __name__ == "__main__":
-    init()
-    jeu = metagrid.create(HEIGHT, WIDTH, 20, 1, init)
+    jeu = metagrid.create(HEIGHT, WIDTH, 20, 1)
     jeu.play_sound(r"assets/snake/snake.mp3")
 
-    jeu.start(fn_click=lambda x, y:None, fn_key=touche, fn_update=update, fn_draw=draw)
+    jeu.start(init, fn_click=lambda x, y:None, fn_key=touche, fn_update=update, fn_draw=draw)

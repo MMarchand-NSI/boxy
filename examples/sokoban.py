@@ -103,12 +103,11 @@ if __name__ == "__main__":
         raise ValueError(f"Le niveau doit être compris entre 0 et {len(maps)-1}")
 
     #Initialisation
-    init()
-    jeu = metagrid.create(get_nb_lignes(), get_nb_colonnes(), 32, 0, init)
+    jeu = metagrid.create(get_nb_lignes(), get_nb_colonnes(), 32, 0)
 
     jeu.play_sound(r"assets/sounds/sokoban_intro.mp3")
 
     # Chargement des tiles
     for nom in tiles.values():
         jeu.load_image(nom, f"assets/sokoban/{nom}.png")
-    jeu.start(None, touche, dessiner, update)
+    jeu.start(init, None, touche, dessiner, update)
